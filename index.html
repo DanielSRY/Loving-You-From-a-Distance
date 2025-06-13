@@ -1,254 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Loving You — Long Distance</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loving You — Long Distance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  /* Overall background and font */
-  body {
-    margin: 0; padding: 2rem;
-    background: linear-gradient(135deg, #0f111a, #1a1f2a);
-    color: #a0c8f0;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-  }
-
-  /* Container box with subtle glass effect */
-  .container {
-    background: rgba(12, 15, 26, 0.75);
-    border: 1px solid #2a4d9b;
-    border-radius: 12px;
-    padding: 2rem;
-    max-width: 700px;
-    width: 100%;
-    box-shadow:
-      0 0 15px 2px rgba(15, 45, 150, 0.7),
-      inset 0 0 30px 3px rgba(15, 45, 150, 0.5);
-  }
-
-  /* Title with orbitron font and subtle glow */
-  h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 500;
-    font-size: 2.5rem;
-    text-align: center;
-    color: #52c7e7;
-    text-shadow:
-      0 0 8px #52c7e7,
-      0 0 20px #1eaedb;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.15em;
-  }
-
-  h2 {
-    font-family: 'Orbitron', sans-serif;
-    color: #71daf8;
-    border-bottom: 1px solid #1b2e57;
-    padding-bottom: 0.3rem;
-    margin-bottom: 1rem;
-  }
-
-  /* Section spacing */
-  .section {
-    margin-bottom: 2rem;
-  }
-
-  /* Iframe styling */
-  iframe {
-    border-radius: 10px;
-    width: 100%;
-    height: 360px;
-    border: none;
-    box-shadow:
-      0 0 20px 4px rgba(18, 50, 120, 0.6);
-    transition: box-shadow 0.3s ease;
-  }
-  iframe:hover {
-    box-shadow:
-      0 0 30px 6px #61dafb;
-  }
-
-  /* Countdown style */
-  #countdown {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem;
-    color: #40e0d0;
-    text-align: center;
-    text-shadow:
-      0 0 12px #40e0d0,
-      0 0 30px #1ad6d9;
-  }
-
-  /* Poems styling */
-  #poems {
-    background: rgba(8, 12, 20, 0.85);
-    padding: 1.3rem;
-    border-radius: 10px;
-    border: 1px solid #1b3a5a;
-    box-shadow: inset 0 0 15px 3px #1b3a5a;
-  }
-  #poems h2 {
-    margin-top: 0;
-  }
-  #poem-list {
-    list-style: none;
-    padding-left: 0;
-    max-height: 150px;
-    overflow-y: auto;
-  }
-  #poem-list li {
-    margin: 0.4rem 0;
-    cursor: pointer;
-    padding: 0.3rem 0.5rem;
-    border-radius: 6px;
-    color: #89cff0;
-    transition: background 0.25s ease;
-  }
-  #poem-list li:hover {
-    background: #1b3a5a;
-  }
-  #poem-viewer {
-    margin-top: 1rem;
-    background: #00111f;
-    padding: 1rem;
-    border-radius: 8px;
-    font-family: 'Courier New', Courier, monospace;
-    max-height: 220px;
-    overflow-y: auto;
-    color: #a0d6ff;
-    box-shadow:
-      0 0 12px 2px #3db7e7;
-    white-space: pre-wrap;
-  }
-
-  /* File input label styled like a button */
-  #poemUploader {
-    display: none;
-  }
-  label[for="poemUploader"] {
-    display: inline-block;
-    background: #1f497d;
-    padding: 0.6rem 1.1rem;
-    color: #9ad1ff;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    user-select: none;
-    box-shadow:
-      0 0 10px #3b7ecc;
-    transition: background 0.3s ease;
-  }
-  label[for="poemUploader"]:hover {
-    background: #3b7ecc;
-    box-shadow:
-      0 0 20px #4db8ff;
-  }
-
-  /* Responsive */
-  @media (max-width: 720px) {
     body {
-      padding: 1rem;
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+      background: radial-gradient(ellipse at top left, #10101a, #000);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 50px 20px;
     }
+
     .container {
-      padding: 1.5rem;
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      max-width: 800px;
+      width: 100%;
+      padding: 40px;
+      text-align: center;
     }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #00f0ff;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 8px;
+      color: #ffaad4;
+      text-align: left;
+    }
+
+    a.album-button {
+      display: inline-block;
+      margin-top: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #00f0ff;
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    a.album-button:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
     iframe {
-      height: 280px;
+      border-radius: 16px;
+      margin-top: 15px;
+      width: 100%;
+      max-width: 100%;
+      height: 400px;
+      border: none;
     }
-  }
-</style>
+
+    ul#poem-list {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    ul#poem-list li {
+      margin-bottom: 10px;
+    }
+
+    ul#poem-list a {
+      color: #a0ffff;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    ul#poem-list a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Loving You — Long Distance</h1>
 
-<div class="container">
-  <h1>Loving You — Long Distance</h1>
+    <h2>📸 Shared Photo Album</h2>
+    <a class="album-button" href="https://photos.app.goo.gl/Gq95DuUodkHaS6m1A" target="_blank">
+      View Our Album
+    </a>
 
-  <!-- Shared Album -->
-  <section class="section" id="photos">
-    <h2>Our Shared Album</h2>
-    <iframe src="https://photos.app.goo.gl/Gq95DuUodkHaS6m1A?usp=sharing" allowfullscreen loading="lazy"></iframe>
-  </section>
+    <h2>🎧 Our Playlist</h2>
+    <iframe 
+      src="https://open.spotify.com/embed/playlist/1FaXwJ1KVSeoFZYv6eKGMW?utm_source=generator" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+      loading="lazy">
+    </iframe>
 
-  <!-- Spotify Playlist -->
-  <section class="section" id="music">
-    <h2>Our Playlist</h2>
-    <iframe src="https://open.spotify.com/embed/playlist/1FaXwJ1KVSeoFZYv6eKGMW" allow="encrypted-media" loading="lazy"></iframe>
-  </section>
+    <h2>📝 My Poems for You</h2>
+    <ul id="poem-list">
+      <!-- Poem links will be inserted here -->
+    </ul>
+  </div>
 
-  <!-- Days Since Section -->
-  <section class="section" id="days-since">
-    <h2>Days Since We Started</h2>
-    <div id="countdown"></div>
-  </section>
-
-  <!-- Poems Section -->
-  <section class="section" id="poems">
-    <h2>Poems for You</h2>
-    <label for="poemUploader">Upload a Poem (.txt)</label>
-    <input type="file" id="poemUploader" accept=".txt" />
-    <ul id="poem-list" aria-label="List of poems"></ul>
-    <pre id="poem-viewer" aria-live="polite">Select a poem to read here...</pre>
-  </section>
-</div>
-
-<script>
-// Countdown days since July 25, 2024
-function daysSince(date) {
-  const now = new Date();
-  const start = new Date(date);
-  const diff = now - start;
-  return Math.floor(diff / (1000 * 60 * 60 * 24));
-}
-
-document.getElementById('countdown').textContent = daysSince('2024-07-25') + ' days';
-
-// Poem upload and display logic
-const poemUploader = document.getElementById('poemUploader');
-const poemList = document.getElementById('poem-list');
-const poemViewer = document.getElementById('poem-viewer');
-
-let poems = [];
-
-poemUploader.addEventListener('change', e => {
-  const file = e.target.files[0];
-  if (!file) return;
-
-  const reader = new FileReader();
-  reader.onload = function(evt) {
-    const content = evt.target.result;
-    const title = file.name.replace(/\.[^/.]+$/, "");
-    poems.push({title, content});
-    updatePoemList();
-    poemViewer.textContent = content;
-  };
-  reader.readAsText(file);
-  e.target.value = ''; // reset input
-});
-
-function updatePoemList() {
-  poemList.innerHTML = '';
-  poems.forEach((poem, i) => {
-    const li = document.createElement('li');
-    li.textContent = poem.title;
-    li.tabIndex = 0;
-    li.onclick = () => {
-      poemViewer.textContent = poems[i].content;
-    };
-    li.onkeypress = e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        poemViewer.textContent = poems[i].content;
+  <script>
+    async function loadPoems() {
+      try {
+        const res = await fetch('./poems/');
+        const text = await res.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
+        const links = [...doc.links].filter(link => link.href.match(/\.(txt|md|html)$/));
+        
+        const list = document.getElementById('poem-list');
+        links.forEach(link => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = `./poems/${link.textContent}`;
+          a.textContent = link.textContent.replace(/\.(txt|md|html)$/, '');
+          a.target = '_blank';
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+      } catch (err) {
+        document.getElementById('poem-list').innerHTML = '<li>Poems will show up here once uploaded.</li>';
       }
-    };
-    poemList.appendChild(li);
-  });
-}
-</script>
+    }
 
+    loadPoems();
+  </script>
 </body>
 </html>
