@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Loving You — Long Distance</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap');
+
+  /* Overall background and font */
+  body {
+    margin: 0; padding: 2rem;
+    background: linear-gradient(135deg, #0f111a, #1a1f2a);
+    color: #a0c8f0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  /* Container box with subtle glass effect */
+  .container {
+    background: rgba(12, 15, 26, 0.75);
+    border: 1px solid #2a4d9b;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 700px;
+    width: 100%;
+    box-shadow:
+      0 0 15px 2px rgba(15, 45, 150, 0.7),
+      inset 0 0 30px 3px rgba(15, 45, 150, 0.5);
+  }
+
+  /* Title with orbitron font and subtle glow */
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #52c7e7;
+    text-shadow:
+      0 0 8px #52c7e7,
+      0 0 20px #1eaedb;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.15em;
+  }
+
+  h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #71daf8;
+    border-bottom: 1px solid #1b2e57;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Section spacing */
+  .section {
+    margin-bottom: 2rem;
+  }
+
+  /* Iframe styling */
+  iframe {
+    border-radius: 10px;
+    width: 100%;
+    height: 360px;
+    border: none;
+    box-shadow:
+      0 0 20px 4px rgba(18, 50, 120, 0.6);
+    transition: box-shadow 0.3s ease;
+  }
+  iframe:hover {
+    box-shadow:
+      0 0 30px 6px #61dafb;
+  }
+
+  /* Countdown style */
+  #countdown {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: #40e0d0;
+    text-align: center;
+    text-shadow:
+      0 0 12px #40e0d0,
+      0 0 30px #1ad6d9;
+  }
+
+  /* Poems styling */
+  #poems {
+    background: rgba(8, 12, 20, 0.85);
+    padding: 1.3rem;
+    border-radius: 10px;
+    border: 1px solid #1b3a5a;
+    box-shadow: inset 0 0 15px 3px #1b3a5a;
+  }
+  #poems h2 {
+    margin-top: 0;
+  }
+  #poem-list {
+    list-style: none;
+    padding-left: 0;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  #poem-list li {
+    margin: 0.4rem 0;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    color: #89cff0;
+    transition: background 0.25s ease;
+  }
+  #poem-list li:hover {
+    background: #1b3a5a;
+  }
+  #poem-viewer {
+    margin-top: 1rem;
+    background: #00111f;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    max-height: 220px;
+    overflow-y: auto;
+    color: #a0d6ff;
+    box-shadow:
+      0 0 12px 2px #3db7e7;
+    white-space: pre-wrap;
+  }
+
+  /* File input label styled like a button */
+  #poemUploader {
+    display: none;
+  }
+  label[for="poemUploader"] {
+    display: inline-block;
+    background: #1f497d;
+    padding: 0.6rem 1.1rem;
+    color: #9ad1ff;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    box-shadow:
+      0 0 10px #3b7ecc;
+    transition: background 0.3s ease;
+  }
+  label[for="poemUploader"]:hover {
+    background: #3b7ecc;
+    box-shadow:
+      0 0 20px #4db8ff;
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    body {
+      padding: 1rem;
+    }
+    .container {
+      padding: 1.5rem;
+    }
+    iframe {
+      height: 280px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Loving You — Long Distance</h1>
+
+  <!-- Shared Album -->
+  <section class="section" id="photos">
+    <h2>Our Shared Album</h2>
+    <iframe src="https://photos.app.goo.gl/Gq95DuUodkHaS6m1A?usp=sharing" allowfullscreen loading="lazy"></iframe>
+  </section>
+
+  <!-- Spotify Playlist -->
+  <section class="section" id="music">
+    <h2>Our Playlist</h2>
+    <iframe src="https://open.spotify.com/embed/playlist/1FaXwJ1KVSeoFZYv6eKGMW" allow="encrypted-media" loading="lazy"></iframe>
+  </section>
+
+  <!-- Days Since Section -->
+  <section class="section" id="days-since">
+    <h2>Days Since We Started</h2>
+    <div id="countdown"></div>
+  </section>
+
+  <!-- Poems Section -->
+  <section class="section" id="poems">
+    <h2>Poems for You</h2>
+    <label for="poemUploader">Upload a Poem (.txt)</label>
+    <input type="file" id="poemUploader" accept=".txt" />
+    <ul id="poem-list" aria-label="List of poems"></ul>
+    <pre id="poem-viewer" aria-live="polite">Select a poem to read here...</pre>
+  </section>
+</div>
+
+<script>
+// Countdown days since July 25, 2024
+function daysSince(date) {
+  const now = new Date();
+  const start = new Date(date);
+  const diff = now - start;
+  return Math.floor(diff / (1000 * 60 * 60 * 24));
+}
+
+document.getElementById('countdown').textContent = daysSince('2024-07-25') + ' days';
+
+// Poem upload and display logic
+const poemUploader = document.getElementById('poemUploader');
+const poemList = document.getElementById('poem-list');
+const poemViewer = document.getElementById('poem-viewer');
+
+let poems = [];
+
+poemUploader.addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(evt) {
+    const content = evt.target.result;
+    const title = file.name.replace(/\.[^/.]+$/, "");
+    poems.push({title, content});
+    updatePoemList();
+    poemViewer.textContent = content;
+  };
+  reader.readAsText(file);
+  e.target.value = ''; // reset input
+});
+
+function updatePoemList() {
+  poemList.innerHTML = '';
+  poems.forEach((poem, i) => {
+    const li = document.createElement('li');
+    li.textContent = poem.title;
+    li.tabIndex = 0;
+    li.onclick = () => {
+      poemViewer.textContent = poems[i].content;
+    };
+    li.onkeypress = e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        poemViewer.textContent = poems[i].content;
+      }
+    };
+    poemList.appendChild(li);
+  });
+}
+</script>
+
+</body>
+</html>
