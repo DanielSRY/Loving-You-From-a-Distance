@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loving You — Long Distance</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -12,76 +12,93 @@
 
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Outfit', sans-serif;
-      background: radial-gradient(ellipse at top left, #10101a, #000);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding: 50px 20px;
+      background: black;
+      color: white;
+      overflow: hidden;
     }
 
-    .container {
-      backdrop-filter: blur(15px);
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-      max-width: 800px;
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-size: cover;
+      background-position: center;
+      animation: slideshow 40s infinite ease-in-out;
+    }
+
+    @keyframes slideshow {
+      0%, 20% {
+        background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+      }
+      25%, 45% {
+        background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+      }
+      50%, 70% {
+        background-image: url('https://images.unsplash.com/photo-1504609813446-562bdc7f71e7');
+      }
+      75%, 100% {
+        background-image: url('https://images.unsplash.com/photo-1504457046788-241d92c6c8df');
+      }
+    }
+
+    .glass {
+      max-width: 800px;
+      margin: 80px auto;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
       padding: 40px;
-      text-align: center;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     }
 
     h1 {
       font-size: 2.5rem;
-      margin-bottom: 20px;
       color: #00f0ff;
+      text-align: center;
     }
 
     h2 {
       font-size: 1.4rem;
-      margin-top: 40px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding-bottom: 8px;
       color: #ffaad4;
-      text-align: left;
+      margin-top: 30px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 5px;
     }
 
-    a.album-button {
+    a.button {
       display: inline-block;
-      margin-top: 10px;
-      background: rgba(255, 255, 255, 0.1);
+      margin-top: 15px;
+      padding: 14px 28px;
+      background: rgba(0, 255, 255, 0.1);
       color: #00f0ff;
-      padding: 12px 24px;
-      border-radius: 12px;
       text-decoration: none;
+      border: 1px solid #00f0ff;
+      border-radius: 12px;
+      transition: 0.3s;
       font-weight: 500;
-      transition: background 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    a.album-button:hover {
-      background: rgba(255, 255, 255, 0.15);
+    a.button:hover {
+      background: rgba(0, 255, 255, 0.2);
     }
 
     iframe {
       border-radius: 16px;
-      margin-top: 15px;
       width: 100%;
-      max-width: 100%;
       height: 400px;
+      margin-top: 20px;
       border: none;
     }
 
     ul#poem-list {
-      list-style-type: none;
+      list-style: none;
       padding: 0;
-      margin-top: 10px;
-      text-align: left;
     }
 
     ul#poem-list li {
@@ -91,43 +108,27 @@
     ul#poem-list a {
       color: #a0ffff;
       text-decoration: none;
-      font-size: 1rem;
     }
 
     ul#poem-list a:hover {
       text-decoration: underline;
     }
-
-    @media screen and (max-width: 600px) {
-      .container {
-        padding: 25px;
-      }
-
-      h1 {
-        font-size: 1.9rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="background"></div>
+  <div class="glass">
     <h1>Loving You — Long Distance</h1>
 
     <h2>📸 Shared Photo Album</h2>
-    <a class="album-button" href="https://photos.app.goo.gl/Gq95DuUodkHaS6m1A" target="_blank">
-      View Our Album
-    </a>
+    <a class="button" href="https://photos.app.goo.gl/Gq95DuUodkHaS6m1A" target="_blank">View Our Album</a>
 
-    <h2>🎧 Our Playlist</h2>
-    <iframe 
-      src="https://open.spotify.com/embed/playlist/1FaXwJ1KVSeoFZYv6eKGMW?utm_source=generator" 
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-      loading="lazy">
-    </iframe>
+    <h2>🎵 Our Playlist</h2>
+    <iframe src="https://open.spotify.com/embed/playlist/1FaXwJ1KVSeoFZYv6eKGMW?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
     <h2>📝 My Poems for You</h2>
     <ul id="poem-list">
-      <!-- Poem links will be inserted here -->
+      <!-- Poem links populate here -->
     </ul>
   </div>
 
@@ -139,7 +140,7 @@
         const parser = new DOMParser();
         const doc = parser.parseFromString(text, 'text/html');
         const links = [...doc.links].filter(link => link.href.match(/\.(txt|md|html)$/));
-        
+
         const list = document.getElementById('poem-list');
         links.forEach(link => {
           const li = document.createElement('li');
